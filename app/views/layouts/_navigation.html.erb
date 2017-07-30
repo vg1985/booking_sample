@@ -1,0 +1,40 @@
+<header>
+  <div class="navbar-fixed-top">
+   <a href="<%= root_url %>"> Upwork Pro Test</a>
+  </div>
+</header>
+
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+    <div class="sidebar-collapse" style="overflow: hidden; width: auto; height: 100%;">
+      <ul class="nav metismenu" id="side-menu">
+        <li class="<%= 'active' if params[:controller].eql? 'bookings' %>">
+          <%= link_to bookings_path do %>
+              <i class="fa fa-dashboard"></i> <span class="nav-label">Bookings</span>
+          <% end %>
+        </li>
+        
+        <li class="<%= 'active' if params[:controller].eql? 'customers' %>">
+          <%= link_to customers_path do %>
+              <i class="fa fa-dashboard"></i> <span class="nav-label">Customers</span>
+          <% end %>
+        </li>
+        
+        <li class="<%= 'active' if params[:controller].eql? 'cleaners' %>">
+          <%= link_to cleaners_path do %>
+              <i class="fa fa-dashboard"></i> <span class="nav-label">Cleaners</span>
+          <% end %>
+        </li>
+        
+        <li class="<%= 'active' if params[:controller].eql? 'cities' %>">
+          <%= link_to cities_path do %>
+              <i class="fa fa-dashboard"></i> <span class="nav-label">Cities</span>
+          <% end %>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</p>
+
+<h3><%= pluralize(@city.cleaners.size, 'Cleaner') %></h3>
+<ul>
+  <% @city.cleaners.each do |cleaner| %>
+    <li><%= link_to(cleaner.full_name, cleaner) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

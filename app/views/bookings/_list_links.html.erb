@@ -1,0 +1,8 @@
+<p>
+  <h3>Bookings:</h3>
+  <ul>
+    <% bookings.each do |booking| %>
+      <li><%= link_to("#{booking.date} (Cleaner: #{booking.cleaner.full_name})", booking) %></li>
+    <% end %>
+  </ul>
+</p>

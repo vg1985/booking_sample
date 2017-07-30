@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @cleaner.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @cleaner.last_name %>
+</p>
+
+<p>
+  <strong>Quality score:</strong>
+  <%= @cleaner.quality_score %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cleaner.email %>
+</p>
+
+<p>
+<strong><%= pluralize(@cleaner.cities.size, 'City') %>:</strong>
+  <ul>
+    <% @cleaner.cities.each do |city| %>
+      <li><%= link_to(city.name, city) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= render 'bookings/list_links', bookings: @cleaner.bookings.order(:date) %>
+
+<%= link_to 'Edit', edit_cleaner_path(@cleaner) %> |
+<%= link_to 'Back', cleaners_path %>
